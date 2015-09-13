@@ -8,7 +8,6 @@ powerData <- read.table("household_power_consumption.txt", sep=";", header=T,str
 
 #create new dateTime column, change format of column from character to POSIXlt
 powerData$dateTime <- paste(powerData$Date, powerData$Time)
-powerData <- cbind(dateTime=0, powerData)
 powerData$dateTime <- strptime(powerData$dateTime,format = "%d/%m/%Y %H:%M:%S", tz="CET")
 
 #subset to use only the two dates selected for the assignment
